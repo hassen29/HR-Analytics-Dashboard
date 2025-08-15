@@ -235,13 +235,13 @@ def compute_fit_score(cv_skills_text, job_description):
 
 @api_view(['POST'])
 def predictJob(request):
-    print("📥 Incoming predictJob request")
+    print("Incoming predictJob request")
 
     job_description = request.data.get('job_description', '').strip()
     files = request.FILES.getlist('cvs')  # multiple CVs from Angular
 
-    print(f"📝 Job description: {job_description}")
-    print(f"📂 Number of files received: {len(files)}")
+    print(f" Job description: {job_description}")
+    print(f" Number of files received: {len(files)}")
 
     if not files:
         print(" No CVs uploaded")
