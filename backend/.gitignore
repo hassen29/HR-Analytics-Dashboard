@@ -1,0 +1,21 @@
+
+#virtual environement
+venv/
+# environement file
+.env
+
+# SQLite DB 
+hrproject/db.sqlite3
+
+# Media uploads
+hrproject/media
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+
+# Media uploads
+hrproject/recrutement/migrations
+
+hrproject/recrutement/__init__.py
