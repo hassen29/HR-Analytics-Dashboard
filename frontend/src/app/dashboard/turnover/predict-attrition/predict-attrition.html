@@ -1,0 +1,45 @@
+<!-- Single Prediction Form -->
+<h2 class="mb-4">Single Prediction</h2>
+<form (ngSubmit)="submitForm()" #predictionForm="ngForm" class="mb-5">
+
+  <div class="mb-3">
+    <label for="monthlyIncome" class="form-label">Monthly Income</label>
+    <input type="number" id="monthlyIncome" class="form-control"
+           [(ngModel)]="formData.MonthlyIncome" name="MonthlyIncome" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input type="number" id="age" class="form-control"
+           [(ngModel)]="formData.Age" name="Age" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="dailyRate" class="form-label">Daily Rate</label>
+    <input type="number" id="dailyRate" class="form-control"
+           [(ngModel)]="formData.DailyRate" name="DailyRate" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="overTime" class="form-label">OverTime (1 = Yes, 0 = No)</label>
+    <input type="number" id="overTime" min="0" max="1" class="form-control"
+           [(ngModel)]="formData.OverTime" name="OverTime" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="distanceFromHome" class="form-label">Distance From Home</label>
+    <input type="number" id="distanceFromHome" class="form-control"
+           [(ngModel)]="formData.DistanceFromHome" name="DistanceFromHome" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Predict</button>
+</form>
+
+<hr>
+
+<!-- Bulk Prediction CSV Upload -->
+<h2 class="mb-4">Bulk Prediction (CSV)</h2>
+<div class="mb-3">
+  <input type="file" (change)="onFileSelected($event)" accept=".csv" class="form-control">
+</div>
+<button (click)="uploadAndPredict()" class="btn btn-success">Upload & Predict</button>

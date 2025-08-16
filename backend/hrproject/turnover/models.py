@@ -7,7 +7,7 @@ class AttritionPrediction(models.Model):
     monthly_income = models.FloatField(null=True, blank=True)
     overtime = models.IntegerField(null=True, blank=True)  
 
-    status = models.CharField(max_length=20)  
+    status = models.CharField(max_length=50 , null=True, blank=True)  
 
 
     prediction = models.IntegerField()  # 0 or 1
