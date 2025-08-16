@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'recrutement.apps.RecrutementConfig',
     'rest_framework',
     "corsheaders",
+    'turnover.apps.TurnoverConfig'
 ]
 
 MIDDLEWARE = [
