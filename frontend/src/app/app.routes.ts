@@ -8,6 +8,7 @@ import { ListCandidat } from './dashboard/recrutement/list-candidat/list-candida
 import { Turnover } from './dashboard/turnover/turnover';
 import { List } from './dashboard/turnover/list/list';
 import { PredictAttrition } from './dashboard/turnover/predict-attrition/predict-attrition';
+import { authGuard } from './guards/auth-guard';
 
 
 export const routes: Routes = [
@@ -15,7 +16,7 @@ export const routes: Routes = [
 
 
 
-{ path: 'dashboard', component: Dashboard, children: [
+{ path: 'dashboard', component: Dashboard, canActivate: [authGuard],  children: [
     
     { path: 'recrutement', component: Recrutement, children: [
         {path: '' ,redirectTo:'list', pathMatch: 'full'},

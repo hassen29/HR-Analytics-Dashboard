@@ -55,13 +55,8 @@ class UserLogoutAPIView(GenericAPIView):
     permission_classes = (IsAuthenticated,)
 
     def post(self, request, *args, **kwargs):
-        try:
-            refresh_token = request.data["refresh"]
-            token = RefreshToken(refresh_token)
-            token.blacklist()
-            return Response(status=status.HTTP_205_RESET_CONTENT)
-        except Exception as e:
-            return Response(
-                {"error": "Invalid refresh token"},
-                status=status.HTTP_400_BAD_REQUEST
-            )
+        """
+        Logout by clearing tokens client-side. Since blacklist is not available,
+        just tell frontend to delete access/refresh tokens.
+        """
+        return Response({"message": "Logout successful"}, status=status.HTTP_200_OK)
