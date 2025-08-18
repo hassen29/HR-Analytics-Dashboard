@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+from datetime import timedelta
+
 import os
 
 from decouple import config
@@ -67,8 +69,11 @@ INSTALLED_APPS = [
 
     'recrutement.apps.RecrutementConfig',
     'rest_framework',
+    'rest_framework_simplejwt',
+
     "corsheaders",
-    'turnover.apps.TurnoverConfig'
+    'turnover.apps.TurnoverConfig',
+    'accounts.apps.AccountsConfig'
 ]
 
 MIDDLEWARE = [
@@ -131,7 +136,11 @@ DATABASES = {
 }
 
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
 
 
 
@@ -175,7 +184,7 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-
+AUTH_USER_MODEL = "accounts.CustomUser"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -186,3 +195,14 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",  # Adjust this if your Angular app runs on a different port
 ]
+
+
+
+
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': False,  # No rotation
+    'BLACKLIST_AFTER_ROTATION': False,  # Disable blacklist
+}
