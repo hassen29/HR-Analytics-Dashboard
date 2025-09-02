@@ -7,7 +7,7 @@ import { Powerbi } from "./powerbi/powerbi";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Footer, Header, Sidebar, RouterOutlet, Powerbi],
+  imports: [Footer, Header, Sidebar, RouterOutlet],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })

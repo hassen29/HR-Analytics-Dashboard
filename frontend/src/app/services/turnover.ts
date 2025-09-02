@@ -25,4 +25,10 @@ export class Turnover {
 
 
   
+
+  getAttrition (){
+
+    return this.http.get(this.url + 'predictions_attritions');
+  }
+  
 }

@@ -1,126 +1,52 @@
-<div class="container mt-5">
-
-    <div class="row">
-
-        <div class="col-lg-6">
-            <h1>Liste des candidats</h1>
-        </div>
-
-        <div class="col-lg-2 ms-auto mt-2">
-            <button class="btn btn-dark" routerLink="/dashboard/recrutement/predict">Predict</button>
-        </div>
-    </div>
-
-    <div class="row mt-3">
-
-        <table class="table">
-            <thead>
-
-                <tr>
-                    <th>#</th>
-                    <th>name</th>
-                    <th>education</th>
-                    <th>skilles</th>
-                    <th>score</th>
-                    <th>email</th>
-                    <th>options</th>
-                </tr>
-            </thead>
-
-              <tfoot>
-
-                <tr>
-                    <th>#</th>
-                    <th>name</th>
-                    <th>education</th>
-                    <th>skilles</th>
-                    <th>score</th>
-                    <th>email</th>
-                    <th>options</th>
-                </tr>
-            </tfoot>
-
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>hassen</td>
-                    <td>engineer</td>
-                    <td>80</td>
-                    <td>math</td>
-                    <td>hassen@gmail.com</td>
-                   
-                    <td>
-                         <button class="btn btn-info">send</button>
-                    </td>
-
-                </tr>
-            </tbody>
-
-        </table>
-    </div>
-
-</div>
-
 
 <div class="container mt-5">
+  <h1>Liste des prédictions</h1>
 
-    <div class="row">
+  <table class="table table-bordered table-hover mt-3">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Predicted Role</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Date Naissance</th>
+        <th>University</th>
+        <th>Skills</th>
+        <th>Langues</th>
+        <th>Adresse</th>
+        <th>Job Description</th>
+        <th>Fit Score</th>
+        <th>Matched Skills</th>
+        <th>Missing Skills</th>
+        <th>Options</th>
+      </tr>
+    </thead>
 
-        <div class="col-lg-6">
-            <h1>Liste des candidats</h1>
-        </div>
-
-        <div class="col-lg-2 ms-auto mt-2">
-            <button class="btn btn-dark" routerLink="/dashboard/recrutement/predict">Predict</button>
-        </div>
-    </div>
-
-    <div class="row mt-3">
-
-        <table class="table">
-            <thead>
-
-                <tr>
-                    <th>#</th>
-                    <th>name</th>
-                    <th>education</th>
-                    <th>skilles</th>
-                    <th>score</th>
-                    <th>email</th>
-                    <th>options</th>
-                </tr>
-            </thead>
-
-              <tfoot>
-
-                <tr>
-                    <th>#</th>
-                    <th>name</th>
-                    <th>education</th>
-                    <th>skilles</th>
-                    <th>score</th>
-                    <th>email</th>
-                    <th>options</th>
-                </tr>
-            </tfoot>
-
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>hassen</td>
-                    <td>engineer</td>
-                    <td>80</td>
-                    <td>math</td>
-                    <td>hassen@gmail.com</td>
-                   
-                    <td>
-                         <button class="btn btn-info">send</button>
-                    </td>
-
-                </tr>
-            </tbody>
-
-        </table>
-    </div>
-
+    <tbody>
+      <tr *ngFor="let pred of predictions; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ pred.predicted_role || 'N/A' }}</td>
+        <td>{{ pred.name || 'N/A' }}</td>
+        <td>{{ pred.email || 'N/A' }}</td>
+        <td>{{ pred.phone || 'N/A' }}</td>
+        <td>{{ pred.date_naissance || 'N/A' }}</td>
+        <td>{{ pred.university }}</td>
+        <td>
+          <div class="overflow-auto" style="max-height:100px; max-width:250px;">
+            {{ pred.skills }}
+          </div>
+        </td>
+        <td>{{ pred.langues }}</td>
+        <td>{{ pred.adresse || 'N/A' }}</td>
+        <td>{{ pred.job_description }}</td>
+        <td>{{ pred.fit_score }}</td>
+        <td>{{ pred.matched_skills || 'None' }}</td>
+        <td>{{ pred.missing_skills || 'None' }}</td>
+        <td>
+          <button class="btn btn-info btn-sm">Send</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

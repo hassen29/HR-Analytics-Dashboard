@@ -30,4 +30,10 @@ export class Recrutement {
 }
 
 
+  getpredictions (){
+
+    return this.http.get(this.url + 'predictions');
+  }
+  
+
 }
