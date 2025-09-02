@@ -27,7 +27,7 @@
         <li class="list-group-item d-flex justify-content-between align-items-center" 
             *ngFor="let file of selectedFiles; let i = index">
           {{ file.name }}
-          <button class="btn btn-sm btn-danger" (click)="removeFile(i)">Remove</button>
+          <button class="btn btn-sm btn-danger" (click)="removeFile(i)">Supprimer</button>
         </li>
       </ul>
 
@@ -35,7 +35,7 @@
         class="btn btn-primary mt-2" 
         (click)="uploadAndPredict()" 
         [disabled]="!selectedFiles.length || !jobDescription">
-        Predict
+        Prédire
       </button>
     </div>
   </div>

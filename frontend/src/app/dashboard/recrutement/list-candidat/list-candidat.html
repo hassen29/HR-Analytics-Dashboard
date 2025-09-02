@@ -6,27 +6,27 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>Predicted Role</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Date Naissance</th>
-        <th>University</th>
-        <th>Skills</th>
+        <th>Nom complet</th>
+        <th>Adresse e-mail</th>
+        <th>Téléphone</th>
+        <th>Date de naissance</th>
+        <th>Université</th>
+        <th>Compétences</th>
         <th>Langues</th>
         <th>Adresse</th>
-        <th>Job Description</th>
-        <th>Fit Score</th>
-        <th>Matched Skills</th>
-        <th>Missing Skills</th>
-        <th>Options</th>
+        <th>Description du poste</th>
+        <th>Score</th>
+        <th>Compétences correspondantes</th>
+        <th>Compétences manquantes</th>
+        <th>Poste prévu</th>
+
       </tr>
     </thead>
 
     <tbody>
       <tr *ngFor="let pred of predictions; let i = index">
         <td>{{ i + 1 }}</td>
-        <td>{{ pred.predicted_role || 'N/A' }}</td>
+      
         <td>{{ pred.name || 'N/A' }}</td>
         <td>{{ pred.email || 'N/A' }}</td>
         <td>{{ pred.phone || 'N/A' }}</td>
@@ -43,9 +43,7 @@
         <td>{{ pred.fit_score }}</td>
         <td>{{ pred.matched_skills || 'None' }}</td>
         <td>{{ pred.missing_skills || 'None' }}</td>
-        <td>
-          <button class="btn btn-info btn-sm">Send</button>
-        </td>
+        <td>{{ pred.predicted_role || 'N/A' }}</td>
       </tr>
     </tbody>
   </table>

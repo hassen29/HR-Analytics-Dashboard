@@ -20,42 +20,33 @@
 
                 <tr>
                     <th>#</th>
-                    <th>name</th>
-                    <th>education</th>
-                    <th>skilles</th>
-                    <th>score</th>
-                    <th>email</th>
-                    <th>options</th>
+
+                    
+                  
+                    <th>Âge</th>
+                    <th>Taux journalier</th>
+                    <th>Distance domicile</th>
+                    <th>Salaire</th>
+                    <th>Heures supplémentaires</th>
+                    
+                    <th>Statut</th>
+
+
                 </tr>
             </thead>
 
-              <tfoot>
+            
 
-                <tr *ngFor="let record of Attritions; let i = index">
+            <tbody>
+                 <tr *ngFor="let record of Attritions; let i = index">
                     <th>{{i +1}}</th>
-                    <th>{{record.id}}</th>
+                  
                     <th>{{ record.age }}</th>
                     <th>{{ record.daily_rate }}</th>
                     <th>{{ record.distance_from_home }}</th>
                     <th>{{ record.monthly_income }}</th>
-                    <th> {{ record.overtime === 1 ? 'Yes' : 'No' }}</th>
+                    <th> {{ record.overtime === 1 ? 'Oui' : 'No' }}</th>
                     <th>{{ record.status }}</th>
-                </tr>
-            </tfoot>
-
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>hassen</td>
-                    <td>engineer</td>
-                    <td>80</td>
-                    <td>math</td>
-                    <td>hassen@gmail.com</td>
-                   
-                    <td>
-                         <button class="btn btn-info">send</button>
-                    </td>
-
                 </tr>
             </tbody>
 

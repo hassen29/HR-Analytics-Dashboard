@@ -82,7 +82,7 @@ def predictAttrition(request):
             }])
 
             pred = int(rf_model.predict(df)[0])
-            status_label = "Will Leave" if pred == 1 else "Will Stay"
+            status_label = "Quittera l'entreprise" if pred == 1 else "Restera dans l'entreprise"
 
             # Save into DB
             AttritionPrediction.objects.create(

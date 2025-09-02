@@ -6,22 +6,22 @@
           <!-- Logo -->
           <div class="card-header pt-4 pb-4 text-center bg-primary">
             <a routerLink="/">
-              <span><img src="assets/images/logo.png" alt="logo" height="18" /></span>
+              <span> <img src="assets/images/dis.png" alt="" height="130" width="200"></span>
             </a>
           </div>
 
           <div class="card-body p-4">
             <div class="text-center w-75 m-auto">
-              <h4 class="text-dark-50 text-center pb-0 fw-bold">Sign In</h4>
+              <h4 class="text-dark-50 text-center pb-0 fw-bold">Connexion</h4>
               <p class="text-muted mb-4">
-                Enter your email address and password to access your account.
+                Entrez votre adresse e-mail et votre mot de passe pour accéder à votre compte.
               </p>
             </div>
 
-            <!-- Login form -->
+            <!-- Formulaire de connexion -->
             <form (ngSubmit)="onSubmit()">
               <div class="mb-3">
-                <label for="emailaddress" class="form-label">Email address</label>
+                <label for="emailaddress" class="form-label">Adresse e-mail</label>
                 <input
                   class="form-control"
                   type="email"
@@ -29,12 +29,12 @@
                   [(ngModel)]="email"
                   name="email"
                   required
-                  placeholder="Enter your email"
+                  placeholder="Entrez votre e-mail"
                 />
               </div>
 
               <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
+                <label for="password" class="form-label">Mot de passe</label>
                 <input
                   type="password"
                   id="password"
@@ -42,17 +42,17 @@
                   [(ngModel)]="password"
                   name="password"
                   required
-                  placeholder="Enter your password"
+                  placeholder="Entrez votre mot de passe"
                 />
               </div>
 
-              <!-- Error message -->
+              <!-- Message d'erreur -->
               <div *ngIf="errorMessage" class="alert alert-danger">
                 {{ errorMessage }}
               </div>
 
               <div class="mb-3 mb-0 text-center">
-                <button class="btn btn-primary" type="submit">Log In</button>
+                <button class="btn btn-primary" type="submit">Se connecter</button>
               </div>
             </form>
           </div>
@@ -63,8 +63,8 @@
         <div class="row mt-3">
           <div class="col-12 text-center">
             <p class="text-muted">
-              Don't have an account?
-              <a routerLink="/register" class="text-muted ms-1"><b>Sign Up</b></a>
+              Vous n'avez pas de compte ?
+              <a routerLink="/register" class="text-muted ms-1"><b>S'inscrire</b></a>
             </p>
           </div>
           <!-- end col-->
@@ -80,5 +80,5 @@
 <!-- end page -->
 
 <footer class="footer footer-alt">
-  2025 © Your App - All rights reserved
+  Développé par <strong>Discovery Intech</strong>
 </footer>
